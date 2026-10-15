@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
-@layer properties;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,700;0,900;1,400&family=Syne:wght@600;700;800&display=swap');
 @layer theme, base, components, utilities;
 /*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
 @layer theme {
@@ -17,6 +17,12 @@
     --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-black: #000;
+   /* Identidade visual Charlles - Verde Vivo & Preto */
+  --brand-black: #080B0A;
+  --brand-black-soft: #0D120F;
+  --brand-green-vivid: #22C55E; /* Verde bem vivo e destacado */
+  --brand-green-light: #4ADE80;
+  --brand-green: #22C55E;
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-sm: 24rem;
@@ -4768,4 +4774,80 @@ html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!
  .shot-big{display:flex;align-items:center;justify-content:center}
  .shot-big .shot-bg{display:block}
  .shot-big .shot-img{position:relative;inset:auto;width:90%;height:auto;border-radius:12px;border:1px solid hsl(var(--foreground)/.14);box-shadow:0 36px 70px -24px rgba(0,0,0,.75)}
+}
+/* ==========================================================
+   TIPOGRAFIA ESTILO MASERATI & CONTRASTE AJUSTADO
+   ========================================================== */
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Syne', 'Montserrat', sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================
+   SEQUÊNCIA STRICTA: PRETO / VERDE VIVO / PRETO / VERDE VIVO
+   ========================================================== */
+
+/* --- SEÇÕES ÍMPARES (1ª, 3ª, 5ª...): PRETO PROFUNDO --- */
+main section:nth-of-type(odd),
+div#root main > section:nth-of-type(odd) {
+  background-color: var(--brand-black) !important;
+}
+
+main section:nth-of-type(odd) *,
+main section:nth-of-type(odd) p,
+main section:nth-of-type(odd) h1,
+main section:nth-of-type(odd) h2,
+main section:nth-of-type(odd) h3,
+main section:nth-of-type(odd) h4,
+main section:nth-of-type(odd) h5,
+main section:nth-of-type(odd) h6,
+main section:nth-of-type(odd) span,
+main section:nth-of-type(odd) a,
+main section:nth-of-type(odd) div {
+  color: #F5F7F5 !important;
+}
+
+/* --- SEÇÕES PARES (2ª, 4ª, 6ª...): VERDE VIVO --- */
+main section:nth-of-type(even),
+div#root main > section:nth-of-type(even) {
+  background-color: var(--brand-green-vivid) !important;
+}
+
+/* Textos gerais, subtítulos, parágrafos, spans e links em PRETO nas seções verdes */
+main section:nth-of-type(even) p,
+main section:nth-of-type(even) span,
+main section:nth-of-type(even) a,
+main section:nth-of-type(even) li,
+main section:nth-of-type(even) div:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  color: #080B0A !important;
+}
+
+/* Títulos (H1, H2, H3, H4, H5, H6) em BRANCO nas seções verdes */
+main section:nth-of-type(even) h1,
+main section:nth-of-type(even) h2,
+main section:nth-of-type(even) h3,
+main section:nth-of-type(even) h4,
+main section:nth-of-type(even) h5,
+main section:nth-of-type(even) h6 {
+  color: #F5F7F5 !important;
+}
+
+/* Ícones e traços SVG nas seções verdes */
+main section:nth-of-type(even) svg {
+  fill: #080B0A !important;
+  stroke: #080B0A !important;
+}
+
+/* ==========================================================
+   OCULTAR ETIQUETAS / EYEBROWS DAS SEÇÕES
+   ========================================================== */
+.eyebrow,
+[class*="eyebrow"],
+.section-eyebrow,
+.tag-label {
+  display: none !important;
 }

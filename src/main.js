@@ -208,3 +208,12 @@ done();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){ScrollTrigger.refresh();});
 addEventListener('load',function(){ScrollTrigger.refresh();});
 })();
+// Recalcula as posições dos gatilhos do GSAP após o carregamento da página
+window.addEventListener("load", () => {
+  ScrollTrigger.refresh();
+});
+
+// Força a atualização ao redimensionar em dispositivos móveis
+window.addEventListener("resize", () => {
+  ScrollTrigger.refresh();
+});
